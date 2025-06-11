@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testerofscratchcode</title>
+    <style>
+        /* Base styles */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #1e293b;
+            color: #f0f0f0;
+            margin: 20px;
+            font-family: "Poppins", Arial, sans-serif;
+            text-align: center;
+            transition: background 0.8s ease-in-out, color 0.8s ease-in-out;
+        }
+
+        .day-mode {
+            background: linear-gradient(120deg, #fef3c7, #f8f1e5, #fde68a);
+            color: #222;
+            animation: dayGlow 10s infinite alternate;
+        }
+
+        .night-mode {
+            background-color: #1e293b;
+            color: #f0f0f0;
+        }
+
+        .toggle-btn {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            padding: 10px 15px;
+            font-size: 1em;
+            font-weight: bold;
+            background-color: #60a5fa;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .toggle-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .toggle-btn:active {
+            animation: bounce 0.3s ease-in-out;
+        }
+
+        .logo {
+            margin-top: 40px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .logo img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .about-me, .instructions, .credits {
+            background-color: #374151;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+            transition: box-shadow 0.5s ease-in-out, transform 0.3s ease-in-out;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .about-me:hover, .instructions:hover, .credits:hover {
+            box-shadow: 0px 0px 20px rgba(96, 165, 250, 0.8);
+            transform: scale(1.05);
+        }
+
+        /* Day Mode Readability Improvements */
+        .day-mode .about-me,
+        .day-mode .instructions,
+        .day-mode .credits {
+            background-color: #ffffff;
+            color: #222;
+            border: 2px solid #60a5fa;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .day-mode .about-me:hover,
+        .day-mode .instructions:hover,
+        .day-mode .credits:hover {
+            background-color: #f3f4f6;
+            box-shadow: 0px 0px 12px rgba(96, 165, 250, 0.7);
+        }
+
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+            width: 80%;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .game-container, .right-side {
+            flex: 1 1 400px;
+            max-width: 600px;
+            margin: 10px;
+        }
+
+        /* Separator Effect */
+        .separator {
+            border: none;
+            height: 5px;
+            width: 80%;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa, #d8b4fe);
+            border-radius: 50px;
+            margin: 30px 0;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.6; transform: scaleX(0.95); }
+            100% { opacity: 1; transform: scaleX(1); }
+        }
+
+        /* Media query for responsiveness */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .game-container, .right-side {
+                max-width: 100%;
+            }
+        }
+
+        h2, h3 {
+            color: #60a5fa;
+        }
+
+        a {
+            font-weight: bold;
+            color: #a78bfa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #d8b4fe;
+        }
+    </style>
+</head>
+<body class="night-mode">
+
+    <button class="toggle-btn" onclick="toggleMode()">Switch to Day Mode</button>
+
+    <div class="logo">
+        <img src="https://cdn2.scratch.mit.edu/get_image/user/105361166_60x60.png" alt="My Logo">
+    </div>
+
+    <div class="about-me">
+        <h3>About Me</h3>
+        <p>My name is <strong>Prateek Priyadarshi</strong>, also known as <a href="https://scratch.mit.edu/users/testerofscratchcode/" target="_blank">@testerofscratchcode</a>.</p>
+        <p>I'm a coder who loves creating games and science-related projects. Exploring new ideas and pushing boundaries in programming excites me!</p>
+        <p><strong>Contact Me:</strong> <a href="mailto:testerofscratchcode@gmail.com">testerofscratchcode@gmail.com</a></p>
+    </div>
+
+    <div class="content">
+        <div class="game-container">
+            <h2>Minecraft Clicker Game 5.3</h2>
+            <iframe src="https://turbowarp.org/1183301080/embed" width="485" height="402" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="right-side">
+            <div class="instructions">
+                <h3>Instructions:</h3>
+                <ul>
+                    <li>Best played on PC, but also available on mobile.</li>
+                    <li>Click the green flag to start.</li>
+                    <li>Aim for a high score!</li>
+                    <li>Enjoy the game.</li>
+                    <li>Please provide feedback to help improve the game.</li>
+                </ul>
+            </div>
+            <div class="credits">
+                <h3>Thanks to:</h3>
+                <p>Thanks to the Internet Archive for the images of the cookie and apple, and for the songs.</p>
+                <p><a href="https://scratch.mit.edu/users/testerofscratchcode/">@testerofscratchcode</a> for the rest.</p>
+                <p><a href="https://scratch.mit.edu/users/JustFinishedCoding/">@JustFinishedCoding</a> for the animation of options.</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="separator">
+
+    <div class="content">
+        <div class="game-container">
+            <h2>Destroy Taco v.2.0.A.1</h2>
+            <iframe src="https://turbowarp.org/1145882246/embed" width="485" height="402" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="right-side">
+            <div class="instructions">
+                <h3>Instructions:</h3>
+                <ul>
+                    <li>It is available on both mobile and PC. Recommended to play on computer.</li>
+                    <li>Click on the green flag to play.</li>
+                    <li>Collect 100 gold coins and 100 money points to win the game.</li>
+                    <li>Enjoy!</li>
+                    <li>Give your feedback—it helps a lot!</li>
+                </ul>
+            </div>
+            <div class="credits">
+                <h3>Credits:</h3>
+                <p>Thanks to ai-song.ai for the song.</p>
+                <p>Google for the background.</p>
+                <p>Rest is done by <a href="https://scratch.mit.edu/users/testerofscratchcode/">@testerofscratchcode</a> (me).</p>
+            </div>
+        </div>
+    </div>
+
+    <hr class="separator">
+
+    <div class="content">
+        <div class="game-container">
+            <h2>BREAKOUT GAME! 1.2v</h2>
+            <iframe src="https://turbowarp.org/988367218/embed" width="485" height="402" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="right-side">
+            <div class="instructions">
+                <h3>Instructions:</h3>
+                <ul>
+                    <li>Best played on PC, but also available on mobile.</li>
+                    <li>Click the green flag to start.</li>
+                    <li>Aim for a high score in a short time!</li>
+                    <li>Enjoy the game.</li>
+                    <li>Please provide feedback to help improve the game.</li>
+                </ul>
+            </div>
+            <div class="credits">
+                <h3>Thanks to:</h3>
+                <p>To my computer teacher for teaching me how to code. Thank you ma'am</p>     
+                <p>Rest is done by <a href="https://scratch.mit.edu/users/testerofscratchcode/">@testerofscratchcode</a> (me).</p>           
+            </div>
+        </div>
+    </div>
+
+    <hr class="separator">
+
+    <div class="content">
+        <div class="game-container">
+            <h2>Shooter Game v 3.0</h2>
+            <iframe src="https://turbowarp.org/945498912/embed" width="485" height="402" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="right-side">
+            <div class="instructions">
+                <h3>Instructions:</h3>
+                <ul>
+                    <li>Best played on PC, but also available on mobile but u can't move player.</li>
+                    <li>Click the green flag to start.</li>
+                    <li>Aim to survive in the time limit!</li>
+                    <li>Use WASD to move player</li>
+                    <li>Enjoy the game.</li>
+                    <li>Please provide feedback to help improve the game.</li>
+                </ul>
+            </div>
+            <div class="credits">
+                <h3>Thanks to:</h3>
+                <p><a href="https://scratch.mit.edu/users/GRA0007/">@GRA0007</a> SONG for progress song</p>
+                <p>Rest is done by <a href="https://scratch.mit.edu/users/testerofscratchcode/">@testerofscratchcode</a> (me).</p>
+                <p><a herf="https://scratch.mit.edu/users/griffpatch/">@griffpatch</a> for player movement code and bullet code</p>                
+            </div>
+        </div>
+    </div>
+
+    <hr class="separator">
+
+
+    <script>
+        function toggleMode() {
+            let body = document.body;
+            let button = document.querySelector(".toggle-btn");
+            body.classList.toggle("day-mode");
+            body.classList.toggle("night-mode");
+            button.textContent = body.classList.contains("day-mode") ? "Switch to Night Mode" : "Switch to Day Mode";
+        }
+    </script>
+
+</body>
+</html>
